@@ -96,3 +96,10 @@
 #         print("*",end=" ")
 #     print()
 
+# problem 14: palindrome checker 
+
+def is_palindrome(word):
+    word = word.lower()
+    return word == word[::-1]
+a = input("enter word : ")
+print(is_palindrome(a))
