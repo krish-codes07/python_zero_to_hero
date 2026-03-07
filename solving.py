@@ -103,3 +103,21 @@ def is_palindrome(word):
     return word == word[::-1]
 a = input("enter word : ")
 print(is_palindrome(a))
+
+# problem 15: creating a calculator function 
+def calculate(a,b,operator):
+    if operator == "+":
+        return a+b
+    elif operator == "-":
+        return a-b
+    elif operator == "*":
+        return a*b
+    elif operator == "/":
+        return a/b
+    else:
+        print("wrong input! try again.")
+operator = input("choose which operation to perform +,-,*,/ : ")
+a = int(input("enter first number : "))
+b = int(input("enter first number : "))
+c = calculate(a,b,operator)
+print(c)
