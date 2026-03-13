@@ -118,4 +118,3 @@ for i in range(0,n):
     value = input("Enter value :")
     detail[key] = value
 create_profile(name , **detail)
-
