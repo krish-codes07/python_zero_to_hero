@@ -15,19 +15,28 @@
 # cat1 = cat()
 # print(cat1.name) 
 
-class dog:
-    species = "mammals"          #class variable same value for every object
-    def __init__(self,name,age):
-        self.name = name         #instance variable : just for this object
-        self.age = age           # self is used to refer to specific object
-    def bark(self):
-        print(f"{self.name} says : Woof! Woof!")
-    def info(self):
-        print(f"Name : {self.name}, Age : {self.age}")
-dog1 = dog("Bruno" , 4)
-dog1.info()
-dog1.bark()
-dog2 = dog("Tommy" , 5)
-dog2.bark()
-print(dog1.species)
-print(dog2.species)
+# class dog:
+#     species = "mammals"          #class variable same value for every object
+#     def __init__(self,name,age):   #constructor initialized every time a new object is created of the class
+#         self.name = name         #instance variable : just for this object
+#         self.age = age           # self is used to refer to specific object
+#     def bark(self):
+#         print(f"{self.name} says : Woof! Woof!")
+#     def info(self):
+#         print(f"Name : {self.name}, Age : {self.age}")
+# dog1 = dog("Bruno" , 4)
+# dog1.info()
+# dog1.bark()
+# dog2 = dog("Tommy" , 5)
+# dog2.bark()
+# print(dog1.species)
+# print(dog2.species)
+
+class Student:
+    def __init__(self , fullname):   #self tells us which object is going to receive the data
+        self.name = fullname
+        print("Adding new Info to database : ")
+s1 = Student("Krish")
+print(s1.name)
+s2 = Student("Rohit")
+print(s2.name)
