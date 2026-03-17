@@ -42,17 +42,19 @@
 #     print("program has finished successfully.")
 
 #solving problem 7 using try else finally to handle all the errors efficienly
-
-try:
-    print("program to divide numbers : ")
-    a = int(input("Enter first number : "))
-    b = int(input("Enter second number : "))
-    print("Result : ", a/b)
-except ValueError:
-    print("you entered the wrong value, only enter integer value.")
-except ZeroDivisionError:
-    print("second number can't be zero, Try again!")
-else: 
-    print("program successfully completed!")
-finally:
-    print("calculation completed.")
+while(True):
+    try:
+        print("program to divide numbers : ")
+        a = int(input("Enter first number : "))
+        b = int(input("Enter second number : "))
+        print("Result : ", a/b)
+    except ValueError:
+        print("you entered the wrong value, only enter integer value.")
+    except ZeroDivisionError:
+        print("second number can't be zero, Try again!")
+    else: 
+        print("program successfully completed!")
+    finally:
+        print("calculation completed.")
+    if(False):
+        break
