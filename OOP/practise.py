@@ -82,55 +82,91 @@
 # s.show_report()
 
 # problem 4 : library book system which has methods issue book , Return book , book info 
-class Book:
-    def __init__(self,total_copies , title, author , issued_copies = 0):
-        self.title = title
-        self.author = author 
-        self.total_copies = total_copies
-        self.issued_copies = issued_copies
+# class Book:
+#     def __init__(self,total_copies , title, author , issued_copies = 0):
+#         self.title = title
+#         self.author = author 
+#         self.total_copies = total_copies
+#         self.issued_copies = issued_copies
 
-    def issue_book(self):
-        if(self.total_copies > 0):
-            self.total_copies -= 1
-            self.issued_copies += 1
-            print(f"Book Issued! Remaining copies {self.total_copies}")
-        elif(self.total_copies == 0):
-            print("No copies available for this book.")
-        else:
-            print("Please choose another book.")
+#     def issue_book(self):
+#         if(self.total_copies > 0):
+#             self.total_copies -= 1
+#             self.issued_copies += 1
+#             print(f"Book Issued! Remaining copies {self.total_copies}")
+#         elif(self.total_copies == 0):
+#             print("No copies available for this book.")
+#         else:
+#             print("Please choose another book.")
 
-    def return_book(self):
-        if(self.issued_copies > 0):
-            print("Book Returned.")
-            self.total_copies += 1
-            self.issued_copies -= 1
-            print(f"Total copies = {self.total_copies}")
-        elif(self.issued_copies == 0 ):
-            print("Nothing to return. ")
+#     def return_book(self):
+#         if(self.issued_copies > 0):
+#             print("Book Returned.")
+#             self.total_copies += 1
+#             self.issued_copies -= 1
+#             print(f"Total copies = {self.total_copies}")
+#         elif(self.issued_copies == 0 ):
+#             print("Nothing to return. ")
 
-    def available_copies(self):
-        if (self.total_copies > 0):
-            return (self.total_copies - self.issued_copies)
+#     def available_copies(self):
+#         if (self.total_copies > 0):
+#             return (self.total_copies - self.issued_copies)
         
-    def show_info(self):
-        print("-----Book Info-----\n\n")
-        print(f"Title : {self.title}")
-        print(f"Author : {self.author}")
-        print(f"Total Copies : {self.total_copies}")
-        print(f"issued : {self.issued_copies}")
-        print(f"Avaiable copies : {self.available_copies()}")
+#     def show_info(self):
+#         print("-----Book Info-----\n\n")
+#         print(f"Title : {self.title}")
+#         print(f"Author : {self.author}")
+#         print(f"Total Copies : {self.total_copies}")
+#         print(f"issued : {self.issued_copies}")
+#         print(f"Avaiable copies : {self.available_copies()}")
 
-title = input("Enter Book name : ")
-author = input("Author Name : ")
-total_copies = int(input("Copies : "))
-l = Book(total_copies , title , author)
-while(True):
-    a = int(input("What do you want to do?\n1.Issue Book\n2.Return book\n3.Show Info\n4.Exit\n"))
-    if(a == 1):
-        l.issue_book()
-    elif(a == 2):
-        l.return_book()
-    elif(a == 3):
-        l.show_info()
-    elif(a == 4):
-        break
+# title = input("Enter Book name : ")
+# author = input("Author Name : ")
+# total_copies = int(input("Copies : "))
+# l = Book(total_copies , title , author)
+# while(True):
+#     a = int(input("What do you want to do?\n1.Issue Book\n2.Return book\n3.Show Info\n4.Exit\n"))
+#     if(a == 1):
+#         l.issue_book()
+#     elif(a == 2):
+#         l.return_book()
+#     elif(a == 3):
+#         l.show_info()
+#     elif(a == 4):
+#         break
+
+# problem 5:employee salary system and bonuses based on their roles
+
+class Employee:
+    def __init__(self , name, role, base_salary):
+        self.name = name
+        self.role = role
+        self.base_salary = base_salary
+    def get_bonus(self):
+        if(self.role == "Manager"):
+            return (self.base_salary*(20/100))
+        elif(self.role == "Developer"):
+            return (self.base_salary*(15/100))
+        elif(self.role == "Intern"):
+            return (self.base_salary*(5/100))
+        else:
+            print("No bonus salary!")
+            return 0
+    def total_salary(self):
+        return self.base_salary + self.get_bonus()
+    def show_details(self):
+        print("-----Employee Details-----")
+        print(f"Name : {self.name}")
+        print(f"Role : {self.role}")
+        print(f"Base Salary : {self.base_salary}")
+        print(f"Bonus : {self.get_bonus()}")
+        print(f"Total Salary : {self.total_salary()}")
+employee = []
+for i in range(3):
+    print(f"Employee {i+1} details :")
+    name = input("Employee Name : ")
+    role = input("Role : ")
+    base_salary = int(input("Base salary : "))
+    employee.append(Employee(name, role, base_salary))
+for emp in employee:
+    emp.show_details()
